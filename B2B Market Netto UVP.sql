@@ -27,3 +27,8 @@ UPDATE `DATABASE`.`postmeta`
 SET meta_value=ROUND (meta_value,2)
 WHERE `meta_key` LIKE 'bm_rrp';
 
+
+
+-- Backup Table löschen.
+ALTER TABLE `DATABASE`.`postmeta`
+DROP COLUMN meta_value_backup;

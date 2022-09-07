@@ -5,7 +5,10 @@
 -- Stand: 07 September 2022
 -- Autor: ©ZenSudo
 
+-- Prüfen der Datenbankspalten (evtl. prefix von postmeta beachten!)
+SELECT * FROM `DATABASE`.`postmeta` WHERE `meta_key` LIKE 'bm_rrp';
 
+-- Backup der ursprünglichen Daten:
 -- Neue Spalte anlegen
 ALTER TABLE `DATABASE`.`postmeta`
 ADD meta_value_backup INT NULL;
@@ -13,6 +16,8 @@ ADD meta_value_backup INT NULL;
 UPDATE `DATABASE`.`postmeta`
 SET meta_value_backup=meta_value
 WHERE `meta_key` LIKE 'bm_rrp';
+
+-- Preisänderungen ausführen:
 -- Update der Preise von Brutto auf Netto
 UPDATE `DATABASE`.`postmeta`
 SET meta_value=meta_value*1.19

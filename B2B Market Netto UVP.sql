@@ -3,7 +3,7 @@
 -- SQL Query zum Ändern des UVP von Brutto auf Netto
 -- WooCommerce mit B2B Market von Marketpress.
 -- Stand: 07 September 2022
--- Autor: Julian Gerber
+-- Autor: © ZenSudo
 
 -- Prüfen der Datenbankspalten (evtl. prefix von postmeta beachten!)
 SELECT * FROM `DATABASE`.`postmeta` WHERE `meta_key` LIKE 'bm_rrp';
